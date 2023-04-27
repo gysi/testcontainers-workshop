@@ -31,7 +31,7 @@ public class RatingsRepository {
                 .increment(toKey(talkId), value + "", 1);
     }
 
-    protected String toKey(String talkId) {
+    public String toKey(String talkId) {
         return "ratings/" + talkId;
     }
 }
