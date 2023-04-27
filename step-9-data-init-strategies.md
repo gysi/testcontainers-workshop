@@ -54,7 +54,7 @@ After you initialize the DB correctly, the test should work again (despite _not_
 
 ## Migrating the DB with Flyway
 
-Next, we're going to remove the data initialization queries from the `talks-schema.sql` file and use [Flyway](https://flywaydb.org/) for populating the DB with actual data.
+Next, we're going use [Flyway](https://flywaydb.org/) for populating the DB with actual data.
 Liquibase or other database migration tools would work similarly. 
 
 Please add the Flyway dependency in `build.gradle`:
@@ -71,7 +71,7 @@ or `pom.xml`:
 </dependency>
 ```
 
-Next, move all the `INSERT ...` statements from the `talks-schema.sql` to `src/main/resources/db/migration/V1_1__talks.sql` file.
+Next, move all statements from the `talks-schema.sql` to `src/main/resources/db/migration/V1_1__talks.sql` file.
 
 Note that the migrations file is not on the **test** classpath, as Flyway is likely to be used for production schema management as well. 
 
