@@ -48,6 +48,19 @@ Add the following line to your `~/.testcontainers.properties` file to disable th
 ```text
 checks.disable=true
 ```
+or if you don't like the approach of having to use a file in your home directory, you can also do it in code:
+```java
+public class AbstractIntegrationTest {
+    @BeforeAll
+    public static void setup() {
+        TestcontainersConfiguration.getInstance().updateUserConfig("checks.disable", "true");
+    }
+}
+```
+further reading:
+https://www.testcontainers.org/features/configuration/
+https://github.com/testcontainers/testcontainers-java/issues/3780
+
 
 ## Hint 2:
 
