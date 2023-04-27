@@ -23,7 +23,7 @@ public class RatingsRepositoryTest {
 
     @Test
     public void testEmptyIfNoKey() {
-        assertThat(repository.findAll(talkId)).isEmpty();
+        assertTrue(repository.findAll(talkId).isEmpty());
     }
 
     @Test
