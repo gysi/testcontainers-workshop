@@ -20,6 +20,7 @@ public class RatingsRepositoryTest {
     final String talkId = "testcontainers";
 
     RatingsRepository repository;
+    StringRedisTemplate redisTemplate;
 
     @Test
     public void testEmptyIfNoKey() {
@@ -46,7 +47,8 @@ But since we're not using Spring Context here, we need to create an instance of 
                 ?
         );
         connectionFactory.afterPropertiesSet();
-        repository = new RatingsRepository(new StringRedisTemplate(connectionFactory));
+        redisTemplate = new StringRedisTemplate(connectionFactory);
+        repository = new RatingsRepository(redisTemplate);
     }
 ```
 
