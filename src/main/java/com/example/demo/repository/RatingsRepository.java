@@ -9,6 +9,12 @@ import java.util.stream.Collectors;
 @Repository
 public class RatingsRepository {
 
+    public static class MaxRatingsAddedException extends RuntimeException {
+        public MaxRatingsAddedException() {
+            super("Max ratings added");
+        }
+    }
+
     final StringRedisTemplate redisTemplate;
 
     public RatingsRepository(StringRedisTemplate redisTemplate) {
@@ -27,6 +33,11 @@ public class RatingsRepository {
     }
 
     public void add(String talkId, int value) {
+        String currentValue = (String) redisTemplate.opsForHash().get(toKey(talkId), value + "");
+        if (currentValue != null && Long.valueOf(currentValue) >= Long.MAX_VALUE) {
+            throw new MaxRatingsAddedException();
+        }
+
         redisTemplate.opsForHash()
                 .increment(toKey(talkId), value + "", 1);
     }
