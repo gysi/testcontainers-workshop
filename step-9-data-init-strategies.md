@@ -73,16 +73,7 @@ or `pom.xml`:
 
 Next, move all statements from the `talks-schema.sql` to `src/main/resources/db/migration/V1_1__talks.sql` file.
 
-Note that the migrations file is not on the **test** classpath, as Flyway is likely to be used for production schema management as well. 
-
-For Flyway not to complain that it can't store its data in the DB, we need to configure it to create its missing database management tables and data.
-
-This can be done in `application.yml` with:
-
-```yaml
-  flyway:
-    baseline-on-migrate: true
-```
+Note that the migrations file is not on the **test** classpath, as Flyway is likely to be used for production schema management as well.
 
 Note that `spring.flyway.locations=classpath:db/migration` is the default location for the migration files used by Flyway so we don't need to configure that explicitly. 
 For more details on Spring Boot and Flyway integration please refer to [Spring manual](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#howto.data-initialization.migration-tool.flyway).
