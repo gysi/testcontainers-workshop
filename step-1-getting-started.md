@@ -46,10 +46,10 @@ With Gradle:
 This might be helpful if the internet connection at the workshop venue is somewhat slow.
 
 ```text
+docker pull testcontainers/ryuk:0.5.1
 docker pull postgres:14-alpine
-docker pull redis:6-alpine
-docker pull openjdk:8-jre-alpine
 docker pull confluentinc/cp-kafka:6.2.1
+docker pull redis:6-alpine
 ```
 
 
