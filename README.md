@@ -16,7 +16,8 @@ This workshop will explain how to use Testcontainers \( [https://www.testcontain
 * [Step 7: Test the API](step-7-test-the-api.md)
 * [Step 8: Edge cases](step-8-edge-cases.md)
 * [Step 9: Data initialization strategies](step-9-data-init-strategies.md)
-* [Step 10: Migrating from Docker Compose](step-10-migrating-from-docker-compose.md)
-* [Step 11: Chaos Engineering](step-11-chaos-engineering.md)
-* [Step 12: Custom Modules](step-12-custom-modules.md)
+* [step-10-spring-boot-testcontainer-integration.md](step-10-spring-boot-testcontainer-integration.md)
+* [Step 11: Migrating from Docker Compose](step-11-migrating-from-docker-compose.md)
+* [Step 12: Chaos Engineering](step-12-chaos-engineering.md)
+* [Step 13: Custom Modules](step-13-custom-modules.md)
 
